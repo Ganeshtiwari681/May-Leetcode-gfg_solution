@@ -1,0 +1,6 @@
+class Solution:
+    def findRelativeRanks(self, score: List[int]) -> List[str]:
+        scor=sorted(score,reverse=True)
+        medals=["Gold Medal","Silver Medal","Bronze Medal"]
+        r_map={score:medals[i] if i < 3 else str(i + 1) for i, score in enumerate(scor)}
+        return [r_map[score] for score in score]
